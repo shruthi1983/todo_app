@@ -1,12 +1,9 @@
 <ul>
-	<li> <%=@task.note %></li> <br> 
+	<div> <li> <%=@task.note %></li> <br> 
 	
 	<p> created_on </p>
 	<li><%= @task.created_on %> </li></div> <br>
     <li> completed </li><br>
-	<li><%= @task.completed_at %> </li><br>
+	<li><%= @task.completed_at %> </li> <div> <br>
 </ul>
-	<%= link_to 'Edit',edit_task_path(@task) %> <br>
-	<%= link_to 'destroy',task_path(@task), method: :delete, data: { confirm: "Are you sure?"} %> 
-	<br>
-    <%= link_to 'back',root_path(@task)%>
+	
