@@ -9,18 +9,33 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     
-   p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p
+   <p class="notice"><%= notice %></p>
+       <p class="alert"> <%= alert %></p
   </head>
 
-  <body style ="text-align:center">
-    <p> <%= link_to "New",new_task_path(@task) %></p>
+  <body style >
+     <nav class= "navbar navbar-default">
+        <div class = "container-fluid"> 
+          <div class="navbar-header">
+          <a class= "navbar-brand" href="<%=root_path %>">Todo_app</a>
+        </div>
+     <div class="collapse-navbar-collapse" id="bs-example-navbar-collapse-1">
+     <ul class ="nav navbar-nav navbar-right">
+        <% if user_signed_in? %>
+         <li><%= link_to "New",new_task_path(@task) %></li>
+         <li><%= link_to 'Signout',destroy_user_session_path, :method=> :delete %></li>
+         <%else%>
+          <li><%= link_to "Sign up",new_user_registration_path %></li>
+          <li><%= link_to "Sign_in",new_user_session_path %></li>
+        <%end %>
+      </ul></div>
+    </div>
+    </nav>
     <div class="container">
-       <div class="row">
-        <div class="col-md-offset-10">
+        <div class="col-lg-10-offset-2">
           
         </div>
-      </div>
+      
     </div>
     <%= yield %>
   </body>
