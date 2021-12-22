@@ -1,0 +1,16 @@
+
+<%= form_with model: @task do |f| %>
+  <div>
+	<%= f.label :note %><br>
+    <%= f.text_field :note %><br>
+  </div>
+  <div>
+	<%= f.label :created_on %><br>
+    <%= f.datetime_select :created_on %><br>
+  </div>
+  <div>
+    <%= f.label :completed %>
+    <%= f.datetime_select :completed_at %>
+   </div>
+    <div> <%= f.submit %></div>
+<% end %>

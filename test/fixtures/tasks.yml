@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  note: MyText
+  created_on: 2021-12-21
+  completed_at: 2021-12-21
+
+two:
+  note: MyText
+  created_on: 2021-12-21
+  completed_at: 2021-12-21
